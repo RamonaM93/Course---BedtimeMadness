@@ -26,12 +26,12 @@ public class Player : MonoBehaviour
          * vertical ( -1 - 0 ) we are moving backwards S
          * vertical (0 - 1) we are moving forwards W
          */
-        float fHorizontal = Input.GetAxis("Horizontal");
-        float fVertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
         //Left Right moving
-        transform.Translate(fHorizontal * speed * Vector3.right * Time.deltaTime);
+        transform.Translate(horizontal * speed * Vector3.right * Time.deltaTime);
         //Forwards Backward
-        transform.Translate(fVertical * speed * Vector3.forward * Time.deltaTime);
+        transform.Translate(vertical * speed * Vector3.forward * Time.deltaTime);
     }
 }
