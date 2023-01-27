@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b90708a9cc873441b6cca8e46e8e5c2, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  description: 
+  actorName: Player
+  actorType: 0
+  health: 100
+  speed: 10
+  hitPower: 1
+  score: 0
+  actor: {fileID: 8426720908306446112, guid: ddeab857aa90a2842931d507845db897, type: 3}
+  bullet: {fileID: 7600303886438848349, guid: b18038bf06bd20b44a6be21a2b49df48, type: 3}
