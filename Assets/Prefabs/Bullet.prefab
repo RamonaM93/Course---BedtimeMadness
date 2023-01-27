@@ -207,4 +207,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a75ee64bf2449cd438131a4a5ffb92c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  actorModel: {fileID: 11400000, guid: f9972a01a6a998b408e00995ddad55f4, type: 2}
