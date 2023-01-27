@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -6,6 +7,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
+    //Bullet properties
+    [SerializeField] private GameObject shootingPoint;
+    [SerializeField] private GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +21,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Attack();
+         }
     }
 
     void Move()
@@ -34,4 +43,13 @@ public class Player : MonoBehaviour
         //Forwards Backward
         transform.Translate(vertical * speed * Vector3.forward * Time.deltaTime);
     }
+
+    void Attack()
+    {
+        Instantiate(bullet, shootingPoint.transform.position, shootingPoint.transform.rotation);
+    }
+}
+
+internal class SerializedFieldAttribute : Attribute
+{
 }
