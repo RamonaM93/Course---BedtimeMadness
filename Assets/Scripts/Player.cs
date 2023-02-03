@@ -25,16 +25,20 @@ public class Player : MonoBehaviour, IActorTemplate
     // Update is called once per frame
     void Update()
     {
-        Move();
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (GameManager.Instance.gameState == GameManager.GameStates.Play)
         {
-            Attack();
-         }
+            Move();
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+            }
+        }
     }
 
     void Move()
-    {   /* 
+    {                
+        /* 
          * horizontal (-1 - 0) we are moving left A
          * horizontal (0 - 1) we are moving right D
          * vertical ( -1 - 0 ) we are moving backwards S
@@ -78,8 +82,4 @@ public class Player : MonoBehaviour, IActorTemplate
     {
         Destroy(gameObject);
     }
-}
-
-internal class SerializedFieldAttribute : Attribute
-{
 }
