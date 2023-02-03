@@ -18,8 +18,7 @@ public class ScenesManager : MonoBehaviour
 
     public void BeginGame()
     {
-        SceneManager.LoadScene("SampleScene");    
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void GameOver()
