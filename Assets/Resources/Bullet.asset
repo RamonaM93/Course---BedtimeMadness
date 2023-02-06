@@ -16,7 +16,7 @@ MonoBehaviour:
   actorName: 
   actorType: 4
   health: 1
-  speed: 60
+  speed: 80
   hitPower: 1
   score: 0
   colourName: red
