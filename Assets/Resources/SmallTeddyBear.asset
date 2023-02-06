@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b90708a9cc873441b6cca8e46e8e5c2, type: 3}
-  m_Name: Bullet
+  m_Name: SmallTeddyBear
   m_EditorClassIdentifier: 
   description: 
   actorName: 
-  actorType: 4
+  actorType: 1
   health: 1
-  speed: 60
+  speed: 1
   hitPower: 1
-  score: 0
-  colourName: red
-  actor: {fileID: 7600303886438848349, guid: b18038bf06bd20b44a6be21a2b49df48, type: 3}
+  score: 1
+  colourName: 
+  actor: {fileID: 695202871335812258, guid: 4fe13966f2a01fc4cabdd5cbc2bc808a, type: 3}
   bullet: {fileID: 0}
