@@ -74,7 +74,18 @@ public class Bullet : MonoBehaviour, IActorTemplate
         if (collider.CompareTag("Enemy"))
         { 
             Destroy(collider.gameObject);
+            Destroy(gameObject);    
         }
+    }
+
+    void OnTriggerSTay(Collider collider)
+    { 
+    
+    }
+
+    void onTriggerExit(Collider collider)
+    { 
+    
     }
 
 }

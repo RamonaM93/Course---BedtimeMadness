@@ -12,6 +12,11 @@ public class Player : MonoBehaviour, IActorTemplate
     int hitPower;
     GameObject actor;
     GameObject bullet;
+    Rigidbody rb;
+
+    [SerializeField] float jumpForce = 1000.0f;
+    [SerializeField] float drawDistance = 2.0f;
+    [SerializeField] bool isJump = true;
 
     //Bullet properties
     [SerializeField] private GameObject shootingPoint;
@@ -19,7 +24,7 @@ public class Player : MonoBehaviour, IActorTemplate
     // Start is called before the first frame update
     void Start()
     {
-    
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -29,11 +34,33 @@ public class Player : MonoBehaviour, IActorTemplate
         {
             Move();
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Fire1"))
             {
                 Attack();
             }
+
+            if (Input.GetKeyDown(KeyCode.Space) && isJump)
+            {
+                Jump();
+            }
         }
+    }
+
+    void FixedUpdate()
+    {
+        Vector3 down = transform.TransformDirection(Vector3.down); //Direction of the ray
+        Debug.DrawRay(transform.position, down * drawDistance, Color.red); // Only a visual gizmo to see what the array is hitting
+        RaycastHit hit;//To store information for the object that is being curently hit by our ray
+
+        LayerMask layerMask = LayerMask.GetMask("Environment");
+
+        if (Physics.Raycast(transform.position, down, out hit, drawDistance, layerMask))
+        { 
+            Debug.Log("We have hit: " + hit.collider.name);
+            Debug.DrawRay(transform.position, down * hit.distance, Color.green);
+            isJump = true;
+        }
+                                                                
     }
 
     void Move()
@@ -82,4 +109,12 @@ public class Player : MonoBehaviour, IActorTemplate
     {
         Destroy(gameObject);
     }
+
+    void Jump()
+    { 
+        Vector3 force = Vector3.up*jumpForce;
+        rb.AddForce(force * force.magnitude, ForceMode.Impulse);
+        isJump = true;
+    }
+
 }
