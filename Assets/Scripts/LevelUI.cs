@@ -6,8 +6,21 @@ public class LevelUI : MonoBehaviour
 {
     //UI Elements
     bool isPaused = false;
+    bool isOptions = true;
 
     [SerializeField] GameObject pausePanel;
+
+    //Custom delegates 
+    public delegate void OnScoreUpdate();
+    public static OnScoreUpdate onScoreUpdate;
+    public delegate void OnLifeUpdate();
+    public static OnLifeUpdate onLifeUpdate;
+
+    void Awake()
+    {
+        onScoreUpdate = ScoreSystem;
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -46,4 +59,19 @@ public class LevelUI : MonoBehaviour
             GameManager.Instance.gameState = GameManager.GameStates.Play;
         }
     }
+
+    public void SetOptions()
+    {
+        isOptions = true;
+    }
+    public void LifeSystemTracker()
+    {
+    
+    }
+
+    public void ScoreSystem()
+    { 
+    
+    }
+
 }
