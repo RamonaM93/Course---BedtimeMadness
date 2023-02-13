@@ -6,9 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: fe041055782f4064fa0bd188e94fcc3a
+  - enabled: 1
+    path: Assets/Scenes/WaveOne.unity
+    guid: 60e3c2757ba9a494cae6efbd306fcee5
+  - enabled: 1
+    path: Assets/Scenes/WaveTwo.unity
+    guid: 3c0a2ced3bf99f54fab269f6ea9dddbb
+  - enabled: 1
+    path: Assets/Scenes/WaveThree.unity
+    guid: 29f520ff53741b447b3ccbd9201ebdb8
+  - enabled: 1
+    path: Assets/Scenes/WaveBoss.unity
+    guid: d0f02c1a268504c4d9d46288ac341e95
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: c3dcb5faf769e4744bf6ae3285fb7f0c
   m_configObjects: {}
