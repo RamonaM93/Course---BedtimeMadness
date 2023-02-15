@@ -60,9 +60,9 @@ public class LevelUI : MonoBehaviour
         }
     }
 
-    public void SetOptions()
+    public void SetOptions (bool value)
     {
-        isOptions = true;
+        isOptions = value;
     }
     public void LifeSystemTracker()
     {

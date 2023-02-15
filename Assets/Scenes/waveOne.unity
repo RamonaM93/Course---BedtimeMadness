@@ -246,7 +246,7 @@ PrefabInstance:
     - target: {fileID: 3817476411501735713, guid: 2321e2e76272d4b4abffc9f7f2e00e8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2109778155}
+      objectReference: {fileID: 2109778156}
     - target: {fileID: 3817476411501735713, guid: 2321e2e76272d4b4abffc9f7f2e00e8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -269,7 +269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3817476411501735713, guid: 2321e2e76272d4b4abffc9f7f2e00e8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
+      value: SetOptions
       objectReference: {fileID: 0}
     - target: {fileID: 3817476411501735713, guid: 2321e2e76272d4b4abffc9f7f2e00e8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3817476411501735713, guid: 2321e2e76272d4b4abffc9f7f2e00e8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: LevelUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3817476411501735713, guid: 2321e2e76272d4b4abffc9f7f2e00e8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -1131,17 +1131,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3650a35636ace4548829ed0bb57ad208, type: 3}
---- !u!1 &2109778155 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4613172154351152792, guid: 2321e2e76272d4b4abffc9f7f2e00e8e, type: 3}
-  m_PrefabInstance: {fileID: 842377266}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2109778156 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4613172154351152787, guid: 2321e2e76272d4b4abffc9f7f2e00e8e, type: 3}
   m_PrefabInstance: {fileID: 842377266}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109778155}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40d0eb6515a73994b8023b221e955575, type: 3}
