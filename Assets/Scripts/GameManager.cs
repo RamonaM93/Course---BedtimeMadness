@@ -2,19 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
    static GameManager instance;
 
+    //Player values
+
+    public static int playerHealth;
+    public static Vector3 playerPosition = Vector3.zero;
+
     //GameStates functionality
-    public enum GameStates
+    public enum GameState
     { 
         None,
         Play,
         Pause,
     }
-    public GameStates gameState = GameStates.Play;
+    public GameState gameState = GameState.Play;
 
     public static GameManager Instance
     {

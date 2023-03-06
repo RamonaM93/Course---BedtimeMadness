@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrollManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    static int playerScore;
+
+    public int PlayerScore
     {
-        
+        get { return playerScore; }
+        private set { playerScore = value; }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetScore(int incomingScore)
     {
-        
+        playerScore += incomingScore;
+    }
+
+    public void ResetScore()
+    {
+        playerScore = 0;
     }
 }

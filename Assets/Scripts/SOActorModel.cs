@@ -31,6 +31,6 @@ public class SOActorModel : ScriptableObject
 
     public GameObject actor;
     public GameObject bullet;
-
-   }
+    internal GameObject actorBullet;
+}
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Player : MonoBehaviour, IActorTemplate
 {
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour, IActorTemplate
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.gameState == GameManager.GameStates.Play)
+        if (GameManager.Instance.gameState == GameManager.GameState.Play)
         {
             Move();
 
@@ -43,6 +44,8 @@ public class Player : MonoBehaviour, IActorTemplate
             {
                 Jump();
             }
+
+            GameManager.playerPosition = transform.position;
         }
     }
 
@@ -108,6 +111,7 @@ public class Player : MonoBehaviour, IActorTemplate
     public void Die()
     {
         Destroy(gameObject);
+        GameManager.Instance.GetComponent<ScenesManager>().GameOver();
     }
 
     void Jump()
@@ -117,4 +121,20 @@ public class Player : MonoBehaviour, IActorTemplate
         isJump = true;
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            if (health > 0)
+            {
+                Debug.Log("The player's health is" + health);
+                health -= collision.gameObject.GetComponent<IActorTemplate>().SendDamage();
+                GameManager.playerHealth = health;
+                LevelUI.onLifeUpdate?.Invoke();
+            }
+            
+            if (health <= 0) Die();
+
+        }
+    }
 }

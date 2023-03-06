@@ -69,24 +69,18 @@ public class Bullet : MonoBehaviour, IActorTemplate
        
     }
 
-    void OnTriggerEnter(Collider collider)
+    void OnCollisionEnter (Collision collision)
     {
-        if (collider.CompareTag("Enemy"))
-        { 
-            Destroy(collider.gameObject);
-            Destroy(gameObject);    
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            if (health >= 1) health -= collision.gameObject.GetComponent<IActorTemplate>().SendDamage();
+            if (health <= 0) Die();
         }
     }
 
-    void OnTriggerSTay(Collider collider)
-    { 
-    
-    }
+    // void OnTriggerStay(Collider collider)
 
-    void onTriggerExit(Collider collider)
-    { 
-    
-    }
+    // void onTriggerExit(Collider collider)
 
 }
 
